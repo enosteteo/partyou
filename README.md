@@ -1,5 +1,7 @@
 # partyou
 
+[![Build Status](https://travis-ci.org/enosteteo/partyou.svg?branch=master)](https://travis-ci.org/enosteteo/partyou)
+
 Suportada versão 3 de python
 
 Para executar o projeto como usuário padrão, em um sistema linux execute o comando:
