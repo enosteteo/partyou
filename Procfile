@@ -1,1 +1,1 @@
-web: gunicorn ccprod.wsgi.py --log-file -
+web: gunicorn ccprod.wsgi --log-file -
