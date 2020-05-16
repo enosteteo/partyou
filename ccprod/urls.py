@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path
 
 from ccprod.base.views import home
+from ccprod.store.views import store_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
+    path('store/', store_list)
 
 ]
