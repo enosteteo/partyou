@@ -2,8 +2,10 @@ from django.db import models
 
 
 # Create your models here.
+# from ccprod.base.models import User
 
-class Products(models.Model):
+
+class Product(models.Model):
     name = models.CharField('Name', max_length=255, unique=True, null=False)
     price = models.CharField('Price', max_length=255, null=False)
 
@@ -18,13 +20,13 @@ class Order(models.Model):
     )
 
     # Dados do Comprador
-    # client = models.ForeignKey('Client', on_delete=models.CASCADE, related_name='Order')
+    # client = models.ForeignKey(User, on_delete=models.CASCADE, related_name='orders')
 
     # Dados específicos do Pedido
     created_at = models.DateTimeField('Created at', auto_now_add=True)
     updated_at = models.DateTimeField('Updated at', auto_now=True)
     status = models.CharField(max_length=1, choices=STATUS_CHOICES, default='W')
-    products = models.ManyToManyField(Products)
+    products = models.ManyToManyField(Product)
 
     def str(self):
         # return self.client.name
