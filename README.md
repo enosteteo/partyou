@@ -52,7 +52,7 @@ Em ambiente CI, utilizar comando abaixo após a conclusão dos testes, para envi
 ```
 
 Levantar aplicação:
-```.env
+```console
     pipenv runserver
 ``` 
 
