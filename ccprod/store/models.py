@@ -1,16 +1,14 @@
 from django.db import models
-
-
-# Create your models here.
 # from ccprod.base.models import User
+# Create your models here.
 
 
 class Product(models.Model):
     name = models.CharField('Name', max_length=255, unique=True, null=False)
     price = models.CharField('Price', max_length=255, null=False)
 
-    def str(self):
-        return self.name
+    def __str__(self):
+        return f'{self.name}:{self.price}'
 
 
 class Order(models.Model):
@@ -28,6 +26,6 @@ class Order(models.Model):
     status = models.CharField(max_length=1, choices=STATUS_CHOICES, default='W')
     products = models.ManyToManyField(Product)
 
-    def str(self):
+    def __str__(self):
         # return self.client.name
-        return self.status
+        return f'self.client.name:{self.status}'

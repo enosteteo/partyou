@@ -13,18 +13,14 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.conf import settings
-from django.contrib import admin
-from django.urls import path, include
-
-from ccprod.base.views import home
+from django.urls import path
+from ccprod.store import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', home),
-    path('', include('ccprod.store.urls')),
+    path('store/', views.store_list),
+    # path('store/create', views.create_orders),
+    # path('store/view/<id::int>'),
+    # path('store/admin/create/', views.create_product),
+    # path('store/admin/list/', views.list_all_orders),
+    # path('store/admin/list/edit', views.edit_orders),
 ]
-
-if settings.DEBUG:
-    import debug_toolbar
-    urlpatterns.append(path('__debug__/', include(debug_toolbar.urls)))
